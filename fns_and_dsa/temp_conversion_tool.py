@@ -27,5 +27,6 @@ def main():
     except ValueError:
         raise ValueError("Invalid temperature. Please enter a numeric value.")
 
+
 if __name__ == "__main__":
     main()

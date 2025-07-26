@@ -7,41 +7,40 @@ def display_menu():
 
 def main():
     shopping_list = []
-
     while True:
         display_menu()
-        choice = input("Enter your choice: ").strip()
+        choice = input("Enter your choice (1-4): ")
 
         if choice == '1':
-            item = input("Enter item to add: ").strip()
+            item = input("Enter the item to add: ").strip()
             if item:
                 shopping_list.append(item)
-                print(f"'{item}' has been added to the shopping list.")
+                print(f"'{item}' has been added to your shopping list.")
             else:
-                print("No item entered. Please try again.")
-
+                print("Item name cannot be empty.")
+        
         elif choice == '2':
-            item = input("Enter item to remove: ").strip()
+            item = input("Enter the item to remove: ").strip()
             if item in shopping_list:
                 shopping_list.remove(item)
-                print(f"'{item}' has been removed from the shopping list.")
+                print(f"'{item}' has been removed from your shopping list.")
             else:
-                print(f"'{item}' not found in the shopping list.")
-
+                print(f"'{item}' was not found in your shopping list.")
+        
         elif choice == '3':
             if shopping_list:
-                print("\nCurrent Shopping List:")
-                for i, item in enumerate(shopping_list, 1):
+                print("\nYour Shopping List:")
+                for i, item in enumerate(shopping_list, start=1):
                     print(f"{i}. {item}")
             else:
-                print("Shopping list is empty.")
-
+                print("Your shopping list is currently empty.")
+        
         elif choice == '4':
             print("Goodbye!")
             break
-
+        
         else:
-            print("Invalid choice. Please try again.")
+            print("Invalid choice. Please enter a number from 1 to 4.")
 
 if __name__ == "__main__":
     main()
